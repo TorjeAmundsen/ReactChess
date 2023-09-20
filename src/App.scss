@@ -1,0 +1,97 @@
+:root {
+  --tile-size: 100px;
+  --tile-bg-dark: hsl(27, 39%, 11%);
+  --tile-bg-light: hsl(32, 38%, 60%);
+  --bg-color: hsl(219, 42%, 9%);
+  --possible-move-light: hsl(120, 45%, 44%);
+  --possible-move-dark: hsl(120, 45%, 25%);
+  --possible-attack-light: hsl(0, 65%, 37%);
+  --possible-attack-dark: hsl(0, 86%, 14%);
+  --currently-selected-light: hsl(199, 45%, 44%);
+  --currently-selected-dark: hsl(199, 50%, 28%);
+
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-container {
+  display: grid;
+  grid-template-rows: repeat(8, var(--tile-size));
+  grid-template-columns: repeat(8, var(--tile-size));
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;
+  background-color: var(--tile-bg-dark);
+  &.possible-move {
+    background-color: var(--possible-move-dark);
+  }
+  &.currently-selected {
+    background-color: var(--currently-selected-dark);
+  }
+  &.possible-attack {
+    background-color: var(--possible-attack-dark);
+  }
+  &:nth-child(even) {
+    background-color: var(--tile-bg-light);
+    &.possible-move {
+      background-color: var(--possible-move-light);
+    }
+    &.currently-selected {
+      background-color: var(--currently-selected-light);
+    }
+    &.possible-attack {
+      background-color: var(--possible-attack-light);
+    }
+  }
+}
+
+.odd {
+  background-color: var(--tile-bg-light);
+  &.possible-move {
+    background-color: var(--possible-move-light);
+  }
+  &.currently-selected {
+    background-color: var(--currently-selected-light);
+  }
+  &.possible-attack {
+    background-color: var(--possible-attack-light);
+  }
+  &:nth-child(even) {
+    background-color: var(--tile-bg-dark);
+    &.possible-move {
+      background-color: var(--possible-move-dark);
+    }
+    &.currently-selected {
+      background-color: var(--currently-selected-dark);
+    }
+    &.possible-attack {
+      background-color: var(--possible-attack-dark);
+    }
+  }
+}
+
+.white {
+  text-shadow: 2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black, -2px 2px 0 black, 2px 0 0 black,
+    0 -2px 0 black, -2px 0 0 black, 0 2px 0 black;
+  color: hsl(0, 0%, 100%);
+}
+.black {
+  text-shadow: 1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white, -1px 1px 0 white;
+  color: hsl(0, 0%, 0%);
+}
