@@ -3,12 +3,12 @@
   --tile-bg-dark: hsl(27, 39%, 11%);
   --tile-bg-light: hsl(32, 38%, 60%);
   --bg-color: hsl(219, 42%, 9%);
-  --possible-move-light: hsl(120, 45%, 44%);
-  --possible-move-dark: hsl(120, 45%, 25%);
+  --possible-move-light: hsl(120, 42%, 48%);
+  --possible-move-dark: hsl(120, 60%, 23%);
   --possible-attack-light: hsl(0, 65%, 37%);
   --possible-attack-dark: hsl(0, 86%, 14%);
-  --currently-selected-light: hsl(199, 45%, 44%);
-  --currently-selected-dark: hsl(199, 50%, 28%);
+  --currently-selected-light: hsl(199, 45%, 50%);
+  --currently-selected-dark: hsl(199, 85%, 22%);
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;

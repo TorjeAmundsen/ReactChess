@@ -57,26 +57,26 @@ export default function ChessBoard() {
     setCurrentPosition(board);
   };
 
-  const handleClick = (e: React.MouseEvent, tile: SinglePiece | null) => {
-    if (tile === null) {
+  const handleClick = (e: React.MouseEvent, piece: SinglePiece | null) => {
+    if (piece === null) {
       setVisualizedTiles(createNewBlankMatrix(8, 8));
       return;
     }
     if (e.altKey) {
       setCurrentPosition((prev) => {
         const newPosition = [...prev];
-        newPosition[tile.row][tile.col] = null;
+        newPosition[piece.row][piece.col] = null;
         return newPosition;
       });
     } else {
-      const moves = tile.getPossibleMoves(currentPosition);
+      const moves = piece.getPossibleMoves(currentPosition);
       console.log(moves);
       setVisualizedTiles(() => {
         const newVisualizedTiles: (null | string)[][] = createNewBlankMatrix(8, 8);
         for (const { col, row, isAttack } of moves) {
           newVisualizedTiles[row][col] = isAttack ? "possible-attack " : "possible-move ";
         }
-        newVisualizedTiles[tile.row][tile.col] = "currently-selected ";
+        newVisualizedTiles[piece.row][piece.col] = "currently-selected ";
         return newVisualizedTiles;
       });
       setCurrentPosition((prev) => [...prev]);
